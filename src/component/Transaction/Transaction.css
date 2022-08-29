@@ -1,6 +1,6 @@
 .transaction-card {
     width: 20%;
-    background-color: rgb(233, 228, 193);
+    background-color: rgb(234, 228, 189);
     margin: 10px;
     border: 2px solid rgb(184, 172, 172);
     text-align: center;
@@ -9,4 +9,5 @@
 
 .delete{
     margin-top: 10px;
+    color: red;
 }

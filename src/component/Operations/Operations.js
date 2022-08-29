@@ -38,10 +38,12 @@ export default class Operations extends Component {
           <label>Category</label>
           <input type="Text" name="category" />
           <div className="btn">
+            <link to = "/transactions">
             <button onClick={this.selectButton} name="deposit">
               Deposit
             </button>
-
+            </link>
+            
             <button onClick={this.selectButton} name="withdraw">
               Withdraw
             </button>
