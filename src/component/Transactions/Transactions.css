@@ -1,0 +1,6 @@
+.transaction-container {
+    display: flex;
+    width: 100%;
+    background-color: aquamarine;
+    flex-wrap: wrap;
+}

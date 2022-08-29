@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
+import './Navbar.css'
 export default class Navbar extends Component {
   render() {
     return (
@@ -8,15 +8,11 @@ export default class Navbar extends Component {
         <div className="nav">
           <h1 className="logo">Bank</h1>
           <div className="navLinks">
-            <Link to={"/operation"}>New Operation</Link>
-            <Link to={"/breakdown"}>Breakdown</Link>
-          </div>
-          <div className="balance">
-            <div>Balance</div>
-            <div className="balance">${this.props.totalAmount}</div>
+            <Link className="link" to="/">Transactions</Link>
+            <Link className="link" to="/operations">Operations</Link>
+            <Link className="link" to="/categories">Categories</Link>
           </div>
         </div>
-
       </div>
     );
   }

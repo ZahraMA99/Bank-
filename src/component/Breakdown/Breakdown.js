@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-export default class Breakdown extends Component {
+class Breakdown extends Component {
+
     listedCategories = () => {
         const transactions = this.props.transactions
         const categories ={}
@@ -32,3 +33,4 @@ export default class Breakdown extends Component {
     }
 }
 
+export default Breakdown;

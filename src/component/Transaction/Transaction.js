@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './Transaction.css'
 
 export default class Transaction extends Component {
  
@@ -8,7 +9,7 @@ export default class Transaction extends Component {
 
   render() {
     let transcation = this.props.transcation;
-    console.log(transcation._id);
+    
     return (
       <div className="transaction-card">
         <div className="vendor"> Vendor: {transcation.vendor}</div>

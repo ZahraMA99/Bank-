@@ -1,0 +1,12 @@
+.transaction-card {
+    width: 20%;
+    background-color: rgb(233, 228, 193);
+    margin: 10px;
+    border: 2px solid rgb(184, 172, 172);
+    text-align: center;
+    padding: 10px;
+}
+
+.delete{
+    margin-top: 10px;
+}

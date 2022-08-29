@@ -1,0 +1,25 @@
+.nav{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas: 
+      'b b l l l l';
+    background-color: antiquewhite;
+  
+}
+.link{
+    margin-right: 30px;
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.navLinks{
+    grid-area: 'l';
+    padding: 30px;
+    
+}
+
+.logo{
+    grid-area: 'b';
+    margin-left: 20px;
+    color: rgb(164, 103, 165);
+}

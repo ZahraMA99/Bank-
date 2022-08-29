@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Transaction from '../Transaction/Transaction'
+import './Transactions.css';
 
 export default class Transactions extends Component {
   render() {
@@ -9,7 +10,6 @@ export default class Transactions extends Component {
     return (
       <div className='transaction-container'>
         {transactions.map((transaction) => <Transaction transcation={transaction} key={transaction._id} deleteTransaction = {deleteTransaction} />)}
-
       </div>
     )
   }

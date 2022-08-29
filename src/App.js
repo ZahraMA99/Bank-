@@ -3,9 +3,9 @@ import React, { Component } from "react";
 import Transactions from "./component/Transactions/Transactions";
 import axios from "axios";
 import Balance from "./component/Balance/Balance";
-import { Fragment } from "react";
 import Operations from "./component/Operations/Operations";
-
+import Breakdown from "./component/Breakdown/Breakdown";
+import Navbar from "./component/Navbar/Navbar";
 
 export default class App extends Component {
   constructor() {
@@ -30,14 +30,14 @@ export default class App extends Component {
     this.getTransactions();
   };
 
+  deleteTransaction = async (transactionID) => {
+    await axios.delete(`http://localhost:3003/transaction/${transactionID}`);
+    this.getTransactions();
+  };
+
   getTransactions = async () => {
     let transactions = await axios.get("http://localhost:3003/transactions");
     this.setState({ transactions: transactions.data });
-  };
-
-  deleteTransaction = async (id) => {
-    await axios.delete(`http://localhost:3003/transaction/${id}`);
-    this.getTransactions();
   };
 
   componentDidMount = () => {
@@ -48,22 +48,18 @@ export default class App extends Component {
     return (
       <Router>
         <div className="bank">
-          <div className="nav">
-            <Link to="/">Transactions</Link>
-            <Link to="/operations">Operations</Link>
-            {/* <Link to="/categories">Categories</Link> */}
-          </div>
+          <Navbar />
           <Route
             exact
             path="/"
             render={() => (
-              <Fragment>
+              <div>
                 <Balance calculateTotalAmount={this.calculateTotalAmount} />
                 <Transactions
                   transactions={this.state.transactions}
                   deleteTransaction={this.deleteTransaction}
                 />
-              </Fragment>
+              </div>
             )}
           />
           <Route
@@ -71,47 +67,14 @@ export default class App extends Component {
             path="/operations"
             render={() => <Operations addTransaction={this.addTransaction} />}
           />
-          {/* <Route
+
+          <Route
             exact
             path="/categories"
             render={() => <Breakdown transactions={this.state.transactions} />}
-          /> */}
+          />
         </div>
       </Router>
     );
   }
 }
-
-{
-  /* <Transactions
-          transactions={this.state.transactions} deleteTransaction={this.deleteTransaction}
-        />
-        <Balance calculateAmount={this.calculateTotalAmount} />
-
- */
-}
-
-// deleteTransaction = async (id) => {
-//   await axios.delete("http://localhost:3003/transaction/" + id);
-//   this.renderTransactions();
-// };
-
-// deposit = (transaction) => {
-//   this.addTransaction(transaction);
-// };
-
-// withdraw = (transaction) => {
-//   this.addTransaction(transaction);
-// };
-
-// addTransaction = (transaction) => {
-//   axios
-//     .post("http://localhost:4000/transaction", transaction)
-//     .then((response) => {
-//       let transactionData = response.data;
-//       this.setState({
-//         ...this.state,
-//         transactions: [...this.state.transactions, transactionData],
-//       });
-//     });
-// };
