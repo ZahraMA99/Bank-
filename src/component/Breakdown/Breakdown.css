@@ -1,0 +1,17 @@
+.categories-container{
+    display: flex;
+    width: 100%;
+    background-color: rgb(123, 102, 133);
+    flex-wrap: wrap;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.category{
+    width: 20%;
+    background-color: rgb(234, 228, 189);
+    margin: 10px;
+    border: 2px solid rgb(184, 172, 172);
+    text-align: center;
+    padding: 10px;
+}

@@ -13,9 +13,10 @@ export default class Transaction extends Component {
     return (
       <div className="transaction-card">
         <div className="vendor"> Vendor: {transcation.vendor}</div>
-        <div className="category"> category: {transcation.category}</div>
+        <div className="Category"> category: {transcation.category}</div>
         <div className="amount"> Amount: {transcation.amount}</div>
         <button className="delete" onClick={this.deleteTransaction}>Delete</button>
+
       </div>
     );
   }

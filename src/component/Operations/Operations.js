@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+
 import "./Operations.css";
 
 export default class Operations extends Component {
@@ -38,12 +40,9 @@ export default class Operations extends Component {
           <label>Category</label>
           <input type="Text" name="category" />
           <div className="btn">
-            <link to = "/transactions">
             <button onClick={this.selectButton} name="deposit">
               Deposit
             </button>
-            </link>
-            
             <button onClick={this.selectButton} name="withdraw">
               Withdraw
             </button>
@@ -53,21 +52,3 @@ export default class Operations extends Component {
     );
   }
 }
-
-//   deposit = (event) => {
-//     const transaction = {
-//       amount: event.target.amount.value,
-//       category: event.target.category.value,
-//       vendor: event.target.vendor.value,
-//     };
-//     this.props.deposit(transaction);
-//   };
-
-//   withdraw = (event) => {
-//     const transaction = {
-//       amount: event.target.amount.value * -1,
-//       category: event.target.category.value,
-//       vendor: event.target.vendor.value,
-//     };
-//     this.props.deposit(transaction);
-//   };

@@ -62,19 +62,4 @@ router.delete("/transaction/:id", async (request, response) => {
   }
 });
 
-router.get("/breakdown", async (req, res) => {
-  try {
-    const transactions = await Transaction.aggregate([
-      { $group: { _id: "$category", totalSalaries: { $sum: "$amount" } } },
-    ]);
-    res.send(transactions);
-  } catch (e) {
-    const error = createError(
-      e.message,
-      "We couldn't find the transactions that you are looking for"
-    );
-    response.status(404).send(error);
-  }
-});
-
 module.exports = router;

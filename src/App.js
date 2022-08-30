@@ -25,6 +25,10 @@ export default class App extends Component {
     return totalAmount;
   };
 
+  changTheme = () => {
+      
+  }
+  //deposit & withdraw
   addTransaction = async (transaction) => {
     await axios.post("http://localhost:3003/transaction", transaction);
     this.getTransactions();
@@ -58,6 +62,7 @@ export default class App extends Component {
                 <Transactions
                   transactions={this.state.transactions}
                   deleteTransaction={this.deleteTransaction}
+                  changTheme = {this.changTheme}
                 />
               </div>
             )}
